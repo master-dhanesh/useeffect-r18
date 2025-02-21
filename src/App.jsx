@@ -10,24 +10,23 @@ const App = () => {
     };
 
     useEffect(() => {
-        // whatever we write here, react will call automatically when the component loads on the browser
         getdata();
     }, []);
 
+    // useEffect(() => {
+    //     console.log("[App.jsx] Created/Mounted");
+
+    //     return () => {
+    //         console.log("[App.jsx] Destruction/Unmounted");
+    //     };
+    // }, []);
+
+    // console.log("[App.jsx] Loaded");
+    console.log(products);
     return (
         <div>
-            <h1 className="text-center my-5 text-5xl text-red-400">
-                Get Products
-            </h1>
-
-            <hr />
-            <ul>
-                {products.length > 0 ? (
-                    products.map((p) => <li key={p.id}>{p.title}</li>)
-                ) : (
-                    <h1 className="text-5xl">Loading</h1>
-                )}
-            </ul>
+            <h1>Use Effect Explained</h1>
+            <button onClick={getdata}>Get Data</button>
         </div>
     );
 };
